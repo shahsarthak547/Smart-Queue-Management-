@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Sora', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Premium Lavender/Purple Palette */
+  --color-bg-primary: #fdfbff;
+  /* Light Lavender White */
+  --color-bg-secondary: #f4f0ff;
+  /* Soft Lavender */
+  --color-text-primary: #2e1065;
+  /* Deep Purple */
+  --color-text-secondary: #6d28d9;
+  /* Violet */
+  --color-border: #e0e7ff;
+  /* Indigo-Light */
+  --color-surface: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Explicitly target the dark class on root */
+.dark {
+  --color-bg-primary: #0b011d;
+  /* Deep Obsidian */
+  --color-bg-secondary: #16082d;
+  /* Dark Purple Surface */
+  --color-text-primary: #f5f3ff;
+  /* Lavender Tinted White */
+  --color-text-secondary: #a78bfa;
+  /* Light Violet */
+  --color-border: #2e1065;
+  /* Deep Purple Border */
+  --color-surface: #1e1b4b;
+  /* Indigo Surface */
+}
+
+#root {
+  width: 100%;
+}
+
+@theme {
+  --color-primary: #7c3aed;
+  /* Vibrant Violet */
+  --color-secondary: #a78bfa;
+  /* Lighter Violet */
+  --color-accent: #f43f5e;
+  /* Rose Accent */
+
+  --color-theme-bg: var(--color-bg-primary);
+  --color-theme-surface: var(--color-surface);
+  --color-theme-text: var(--color-text-primary);
+  --color-theme-text-muted: var(--color-text-secondary);
+  --color-theme-border: var(--color-border);
+}
+
+@layer base {
+  body {
+    @apply bg-theme-bg text-theme-text transition-colors duration-300;
+    margin: 0;
+    display: flex;
+    place-items: flex-start;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+}
